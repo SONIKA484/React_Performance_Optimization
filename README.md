@@ -73,7 +73,3 @@ Through this project, I learned:
 * How React.lazy and Suspense improve application performance
 * How React Router enables navigation without page reloads
 * How to observe component rendering behavior using console logs
-
-## Author
-
-Sonika Eswaramoorthi
