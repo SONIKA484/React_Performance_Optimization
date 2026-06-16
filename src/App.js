@@ -1,23 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+
+import { Routes, Route, Link } from "react-router-dom";
+import { lazy, Suspense } from "react";
+
+import Dashboard from "./pages/Dashboard";
+
+const Patients = lazy(() => import("./pages/Patients"));
+const Doctors = lazy(() => import("./pages/Doctors"));
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app-container">
+        <h1 className="title">Healthcare App</h1>
+
+      <nav className="navbar">
+        <Link to="/">Dashboard</Link> |{" "}
+        <Link to="/patients">Patients</Link> |{" "}
+        <Link to="/doctors">Doctors</Link>
+      </nav>
+
+      <hr />
+
+      <Suspense fallback={<h2>Loading...</h2>}>
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/patients" element={<Patients />} />
+          <Route path="/doctors" element={<Doctors />} />
+        </Routes>
+      </Suspense>
     </div>
   );
 }

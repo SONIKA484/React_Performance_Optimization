@@ -1,70 +1,79 @@
-# Getting Started with Create React App
+# React Performance Optimization (Healthcare App)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+This project is a practice application built using React to understand and implement React performance optimization techniques. The application simulates a simple Healthcare Management System with a Dashboard, Patients page, and Doctors page.
 
-In the project directory, you can run:
+The primary focus of this task is learning and applying:
 
-### `npm start`
+* React Router
+* React.lazy()
+* Suspense
+* useMemo()
+* useCallback()
+* React.memo()
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Dashboard
 
-### `npm test`
+* Displays total number of patients
+* Displays total number of doctors
+* Demonstrates useMemo() for memoized calculations
+* Includes a re-render test button
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Patients Page
 
-### `npm run build`
+* Displays a list of patients using dummy data
+* Search functionality for filtering patients
+* Uses useMemo() for optimized filtering
+* Uses useCallback() for search handler optimization
+* Uses React.memo() to prevent unnecessary re-renders of PatientCard components
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Doctors Page
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* Displays a list of doctors using dummy data
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Performance Optimization
 
-### `npm run eject`
+* Lazy loading implemented for Patients and Doctors pages
+* Suspense fallback displayed while loading components
+* React.memo used to reduce unnecessary component re-renders
+* useMemo used for expensive calculations and filtering
+* useCallback used to memoize event handlers
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Technologies Used
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* React
+* React Router DOM
+* JavaScript (ES6+)
+* CSS3
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Folder Structure
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+src/
+├── components/
+│ └── PatientCard.jsx
+├── pages/
+│ ├── Dashboard.jsx
+│ ├── Patients.jsx
+│ └── Doctors.jsx
+├── data.js
+├── App.js
+├── App.css
+└── index.js
 
-## Learn More
+## Learning Outcomes
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Through this project, I learned:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+* When and why to use useMemo()
+* When and why to use useCallback()
+* How React.memo prevents unnecessary re-renders
+* How React.lazy and Suspense improve application performance
+* How React Router enables navigation without page reloads
+* How to observe component rendering behavior using console logs
 
-### Code Splitting
+## Author
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Sonika Eswaramoorthi
