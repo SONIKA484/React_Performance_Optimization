@@ -13,6 +13,7 @@ function Doctors() {
       className="patient-card"
     >
       <h3>{doctor.name}</h3>
+      <p>ID: {doctor.id}</p>
     </div>
       ))}
     </div>

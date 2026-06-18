@@ -12,12 +12,13 @@ function Patients() {
   }, []);
 
   const filteredPatients = useMemo(() => {
-    console.log("Filtering Patients...");
+  console.log("Filtering Patients...");
 
-    return patients.filter((patient) =>
-      patient.name.toLowerCase().includes(search.toLowerCase())
-    );
-  }, [search]);
+  return patients.filter((patient) =>
+    patient.name.toLowerCase().includes(search.toLowerCase()) ||
+    patient.id.toString().includes(search)
+  );
+}, [search]);
 
   return (
     <div className="page-card">
@@ -35,7 +36,7 @@ function Patients() {
       {filteredPatients.map((patient) => (
         <PatientCard
           key={patient.id}
-          patient={patient}
+          patient={patient}          
         />
       ))}
     </div>

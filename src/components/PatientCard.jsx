@@ -5,10 +5,10 @@ function PatientCard({ patient }) {
 
   return (
     <div className="patient-card">
-      <h3>{patient.name}</h3>
-      <p>Age: {patient.age}</p>
-      <hr />
-    </div>
+  <h3>{patient.name}</h3>
+  <p>ID: {patient.id}</p>
+  <p>Age: {patient.age}</p>
+</div>
   );
 }
 
